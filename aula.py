@@ -25,3 +25,5 @@ plt.show()
 yLBinaural = np.convolve(sound, HRTF[:, 0])
 yRBinaural = np.convolve(sound, HRTF[:, 1])
 yBinaural = np.vstack((yLBinaural, yRBinaural)).T
+
+wavfile.write('./sounds/out/binaural.wav', fs, yBinaural.astype(np.int16))
